@@ -1,0 +1,193 @@
+.timer-widget {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timer-widget--finished {
+  animation: pulseGlow 1s ease-in-out 3;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(0, 212, 255, 0); }
+  50% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.3); }
+}
+
+.timer-widget__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0;
+  color: #e0e0e8;
+}
+
+.timer-widget__setup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.timer-widget__inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.timer-widget__input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-widget__input-group label {
+  font-size: 0.65rem;
+  color: #6b6b80;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timer-widget__input {
+  width: 52px;
+  padding: 10px 6px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.timer-widget__input:focus {
+  border-color: #7b2ff7;
+}
+
+.timer-widget__input::-webkit-inner-spin-button,
+.timer-widget__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.timer-widget__separator {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6b6b80;
+  margin-top: 14px;
+}
+
+.timer-widget__running {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timer-widget__circle-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.timer-widget__circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.timer-widget__circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 6;
+}
+
+.timer-widget__circle-progress {
+  fill: none;
+  stroke: url(#timerGrad);
+  stroke: #00d4ff;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.timer-widget__display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.timer-widget__alert {
+  font-size: 0.85rem;
+  color: #ffd700;
+  font-weight: 700;
+  animation: bounceIn 0.5s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.timer-widget__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.timer-widget__btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.timer-widget__btn--start {
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  color: #fff;
+}
+
+.timer-widget__btn--start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(123, 47, 247, 0.4);
+}
+
+.timer-widget__btn--pause {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.timer-widget__btn--reset {
+  background: rgba(255, 255, 255, 0.06);
+  color: #a0a0b0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timer-widget__btn--reset:hover {
+  background: rgba(255, 77, 106, 0.1);
+  color: #ff4d6a;
+  border-color: rgba(255, 77, 106, 0.2);
+}

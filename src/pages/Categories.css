@@ -1,0 +1,124 @@
+.categories-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.categories-page__container {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.categories-page__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.categories-page__title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.categories-page__subtitle {
+  color: #a0a0b0;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.categories-page__subtitle strong {
+  color: #00d4ff;
+}
+
+.categories-page__progress {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.categories-page__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.categories-page__count {
+  font-size: 0.8rem;
+  color: #6b6b80;
+}
+
+.categories-page__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.categories-page__btn {
+  align-self: center;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.categories-page__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(123, 47, 247, 0.4);
+}
+
+.categories-page__btn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.categories-page__btn--shake {
+  animation: shake 0.5s ease;
+  pointer-events: auto;
+  opacity: 0.6;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+@media (max-width: 700px) {
+  .categories-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categories-page__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .categories-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,116 @@
+.movie-card {
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(123, 47, 247, 0.15);
+  border-color: rgba(123, 47, 247, 0.3);
+}
+
+.movie-card__poster-wrap {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+}
+
+.movie-card__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movie-card__poster {
+  transform: scale(1.1);
+}
+
+.movie-card__no-poster {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 100%);
+  font-size: 2.5rem;
+  padding: 16px;
+}
+
+.movie-card__no-poster-text {
+  font-size: 0.72rem;
+  color: #8888a0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.movie-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-card__overlay {
+  opacity: 1;
+}
+
+.movie-card__view {
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-card__view {
+  transform: translateY(0);
+}
+
+.movie-card__rating {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.movie-card__info {
+  padding: 12px;
+}
+
+.movie-card__title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e0e0e8;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card__year {
+  font-size: 0.72rem;
+  color: #6b6b80;
+}
